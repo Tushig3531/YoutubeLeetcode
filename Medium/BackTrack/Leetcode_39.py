@@ -24,18 +24,17 @@ def combinationSum(candidates, target):
         """
         result=[]
         def backtrack(remain,combination,start):
-            if remain==0:
-                result.append(list(combination))
-                return
-            if remain<0:
-                return
-            for i in range(start,len(candidates)):
-                combination.append(candidates[i])
-                backtrack(remain-candidates[i],combination,i)
-                combination.pop()
+                if remain==0:
+                        result.append(list(combination))
+                        return
+                if remain<0:
+                        return
+                for i in range(start,len(candidates)):
+                        combination.append(candidates[i])
+                        backtrack(remain-candidates[i],combination,i)
+                        combination.pop()
         backtrack(target,[],0)
-        return result
-            
+        return result            
         
 candidates=[2,3,6,7]
 target=7
